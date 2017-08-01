@@ -1,0 +1,16 @@
+﻿@model MyTestApp.Models.Ingredient
+@using HtmlHelpers.BeginCollectionItemCore
+@using (Html.BeginCollectionItem("Ingredients"))
+{
+    <div id="ingredientRow" class="ingredientRow">
+        @Html.HiddenFor(m => m.ID)
+        @Html.HiddenFor(m => m.RecipeID)
+        @Html.EditorFor(m => m.Name)
+
+        @Html.EditorFor(m => m.Quantity)
+
+        @Html.DropDownListFor(m => m.UnitID, (IEnumerable<SelectListItem>)ViewBag.unitList, "--Select--", new { @class = "" })
+
+        <a href="#" id="deleteRow" class="deleteRow" onclick="deleteFunction()">Delete</a>
+    </div>
+}

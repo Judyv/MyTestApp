@@ -1,0 +1,18 @@
+﻿@model MyTestApp.Models.Ingredient
+@using HtmlHelpers.BeginCollectionItemCore
+@using (Html.BeginCollectionItem("Ingredients"))
+{
+    <tr>
+        <td>
+            @Html.HiddenFor(m => m.ID)
+            @Html.TextBoxFor(m => m.Name)
+            @Html.TextBoxFor(m => m.Quantity)
+            @Html.TextBoxFor(m => m.Units)
+        </td>
+
+        <td>
+            <span class="glyphicon glyphicon-trash action-icon" data-action="removeItem"></span>
+        </td>
+
+    </tr>
+}
